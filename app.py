@@ -36,18 +36,6 @@ def check_mysql(db_host, db_name, db_user, db_password):
     except Exception as e:
         return f"MySQL Database is DOWN! ({e})"
 
-
-# @app.route("/")
-# def check_health_of_both():
-#     redis_status = check_redis()
-#     mysql_status = check_mysql(DB_HOST, DB_NAME, DB_USER, DB_PASSWORD)
-#     return f'''
-#     <html>
-#     <body>
-#     Redis status: {redis_status}
-#     <br>MySQL DB status: {mysql_status}
-#     </body>
-#     </html>'''
 @app.route("/")
 def check_health_of_both():
     redis_status = check_redis()
